@@ -1,4 +1,4 @@
-W,H,x,y,r=map(int,input().split())
+W, H, x, y, r = map(int, input().split())
 
 a1 = x + r
 a2 = x - r
