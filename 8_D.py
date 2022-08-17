@@ -1,8 +1,8 @@
-x = input()
-y = "vanceknowledgetoad"
-y = y * 2
+s = input()
+p = input()
+s = s * 2
 
-if x in y:
+if p in s:
     print("Yes")
 else:
     print("No")
