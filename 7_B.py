@@ -15,5 +15,3 @@ while True:
 
 for l in y:
     print(l)
-
-
