@@ -1,19 +1,18 @@
 flag = True
-list = []
+list1 = []
 
-while flag == True:
-    X = input("Enter the fomula :")
-    Y = X.split()
+while flag:
+    Y = input().split()
     a, b = int(Y[0]), int(Y[2])
     if Y[1] == "+":
-        list.append(a+b)
+        list1.append(a+b)
     elif Y[1] == "-":
-        list.append(a-b)
+        list1.append(a-b)
     elif Y[1] == "*":
-        list.append(a*b)
+        list1.append(a*b)
     elif Y[1] == "/":
-        list.append(a//b)
+        list1.append(a//b)
     if Y[1] == "?":
         break
 
-[print(i) for i in list]
+[print(i) for i in list1]
