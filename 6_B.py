@@ -7,7 +7,7 @@ answer = []
 def brute(x):   #総当たりでリスト内に入力したものが含まれるのかを検索
     for j in range(0,13):
         if [mark_list[x],num_list[j]] not in char_list:
-            answer.append([mark_list[x],num_list[j]])
+            answer.append([mark_list[x], num_list[j]])
     return answer
 
 
@@ -31,7 +31,7 @@ for k in range(len(mark_list)):
         brute(3)
 
 for l in range(len(answer)):
-    print(answer[l][0],answer[l][1])
+    print(answer[l][0], answer[l][1])
 
 
 
