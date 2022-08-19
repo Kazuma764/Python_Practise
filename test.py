@@ -1,3 +1,7 @@
+apart1 = [[0] * 10, [0] * 10, [0] * 10]
+apart2 = [[0] * 10, [0] * 10, [0] * 10]
+apart3 = [[0] * 10, [0] * 10, [0] * 10]
+apart4 = [[0] * 10, [0] * 10, [0] * 10]
 log = []
 log_a1 = []
 log_a2 = []
@@ -10,7 +14,7 @@ def print_room(x):
     for i in range(3):
         R = [str(j) for j in apart[i]]
         R = " ".join(R)
-        print("", R)
+        print("",R)
 
 
 def print_hash():
@@ -22,10 +26,11 @@ def caluculate(x):
     for i in x:
         if i[1] == 1:
             apart[0][i[2] - 1] = apart[0][i[2] - 1] + i[3]
-        elif i[1] == 2:
+        if i[1] == 2:
             apart[1][i[2] - 1] = apart[1][i[2] - 1] + i[3]
-        else:
+        if i[1] == 3:
             apart[2][i[2] - 1] = apart[2][i[2] - 1] + i[3]
+    
     return apart
 
 
@@ -44,15 +49,14 @@ for i in log:
     else:
         log_a4.append(i)
 
+print(log_a1)
+print(log_a2)
+print(log_a3)
+print(log_a4)
+
+"""
 apart1 = caluculate(log_a1)
 apart2 = caluculate(log_a2)
 apart3 = caluculate(log_a3)
 apart4 = caluculate(log_a4)
-
-print_room(apart1)
-print_hash()
-print_room(apart2)
-print_hash()
-print_room(apart3)
-print_hash()
-print_room(apart4)
+"""
