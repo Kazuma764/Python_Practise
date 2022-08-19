@@ -1,2 +1,2 @@
 x = input()
-print(int(x)**3)
+print(int(x) ** 3)
