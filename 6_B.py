@@ -1,37 +1,53 @@
-mark_list = ["S","H","D","C"]
-num_list = list(range(1,14))
+mark_list = ["S", "H", "D", "C"]
+num_list = list(range(1, 14))
 num_list = [str(i) for i in num_list]
-char_list = []
+S_list = []
+H_list = []
+C_list = []
+D_list = []
+card_list = []
 answer = []
 
-def brute(x):   #総当たりでリスト内に入力したものが含まれるのかを検索
-    for j in range(0,13):
-        if [mark_list[x],num_list[j]] not in char_list:
-            answer.append([mark_list[x], num_list[j]])
-    return answer
+
+def remove_list(x):
+    l = len(x)
+    if l == 0:
+        exit()
+    numbers = ["1", "2", "3", "4", "5",
+               "6", "7", "8", "9", "10",
+               "11", "12", "13"]
+    for i in range(l):
+        if x[i][1] in numbers:
+            numbers.remove(x[i][1])
+    return numbers
 
 
+N = int(input())
 
-n = int(input())
-count = 0
+for i in range(N):
+    card = input().split()
+    card_list.append(card)
 
-while count < n:
-    x = list(input().split())
-    char_list.append(x)
-    count += 1
-
-for k in range(len(mark_list)):
-    if k == 0:
-        brute(k)
-    elif k == 1:
-        brute(1)
-    elif k == 2:
-        brute(2)
+for i in card_list:
+    if i[0] == "S":
+        S_list.append(i)
+    elif i[0] == "H":
+        H_list.append(i)
+    elif i[0] == "C":
+        C_list.append(i)
     else:
-        brute(3)
+        D_list.append(i)
 
-for l in range(len(answer)):
-    print(answer[l][0], answer[l][1])
+S_num = remove_list(S_list)
+H_num = remove_list(H_list)
+C_num = remove_list(C_list)
+D_num = remove_list(D_list)
 
-
-
+for i in range(len(S_num)):
+        print("S", S_num[i])
+for j in range(len(H_num)):
+        print("H", H_num[j])
+for k in range(len(C_num)):
+        print("C", C_num[k])
+for l in range(len(D_num)):
+        print("D", D_num[l])
